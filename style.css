@@ -1,0 +1,81 @@
+body {
+ 
+        background-color: rgb(224, 223, 223);
+        margin: 0 auto;
+        height: 167px;
+        width: 600px;
+        font-family: "Smythe", serif;
+} 
+
+
+.header-img{
+    background-image: url(./resources/images/header.png);
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+    height: 167px;
+}
+.header-txt{
+    color: white;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 13.8px;
+}
+.menu-items-list{
+    background-color: white;
+}
+.menu-items{
+    display: flex;
+    width: 600px;
+    /* height: 200px; */
+    background-color:white;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 20px 20px 0;
+}
+.add-to-cart-btn
+.menu-items-img{
+    flex: 0 0 auto;
+    padding-left: 20px;
+    
+}
+.menu-items-img p span{
+    font-size: 70.72px;
+}
+
+.menu-items-txt{
+    flex: 1;
+    padding-left: 36px;
+    font-weight: 400;
+    font-family: "Smythe", serif;
+    line-height: 12px;
+}
+.menu-item-name{
+    font-size: 28px;
+}
+.menu-item-ingredients{
+    font-size: 16px;
+    color: #8B8B8B;
+   
+}
+
+.menu-item-price{
+    font-size: 20px;
+
+}
+.add-to-cart-btn {  
+    display: flex;
+    width: 50px;
+        height: 50px;
+        border: 1px solid #8B8B8B;
+        align-items: center;
+        justify-content: center;
+        border-radius:50% ;
+        cursor: pointer;
+        margin-top: 28px;
+}
+
+/* .fa-solid {
+  
+
+} */
+
