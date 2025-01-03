@@ -1,11 +1,12 @@
 body {
  
-        background-color: rgb(224, 223, 223);
+        background-color: rgb(228, 227, 227);
         margin: 0 auto;
-        height: 167px;
         width: 600px;
         font-family: "Smythe", serif;
 } 
+
+
 
 
 .header-img{
@@ -14,6 +15,12 @@ body {
     /* background-size: cover; */
     height: 167px;
 }
+.your-order-section {
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
 .header-txt{
     color: white;
     font-weight: 400;
@@ -21,28 +28,27 @@ body {
     line-height: 13.8px;
 }
 .menu-items-list{
-    background-color: white;
+    padding: 0 0 50px;
 }
 .menu-items{
     display: flex;
     width: 600px;
     /* height: 200px; */
-    background-color:white;
+    /* background-color:white; */
     justify-content: space-between;
     box-sizing: border-box;
     padding: 20px 20px 0;
 }
-.add-to-cart-btn
-.menu-items-img{
+.add-to-cart-btn,
+.menu-items-img ,.menu-item-name{
     flex: 0 0 auto;
-    padding-left: 20px;
     
 }
 .menu-items-img p span{
     font-size: 70.72px;
 }
 
-.menu-items-txt{
+.menu-items-txt, .item-remove-btn{
     flex: 1;
     padding-left: 36px;
     font-weight: 400;
@@ -52,10 +58,15 @@ body {
 .menu-item-name{
     font-size: 28px;
 }
-.menu-item-ingredients{
-    font-size: 16px;
+.menu-item-ingredients, .item-remove-btn{
+    font-size: 12px;
     color: #8B8B8B;
    
+}
+
+ul{
+    list-style-type: none;
+  
 }
 
 .menu-item-price{
@@ -74,8 +85,34 @@ body {
         margin-top: 28px;
 }
 
-/* .fa-solid {
-  
+.content-body-sections{
+    background-color: white;
+    margin: 0 auto;
+    width: 600px;
+}
 
-} */
 
+.order-items-list P{
+        text-align: center;
+        margin: 0;
+       
+}
+
+.order-item-list-content{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    margin-right: 20px;
+    padding: 20px;
+}
+.left-side-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.order-item-list-content .item-remove-btn{
+padding-left: 10px;
+cursor: pointer;
+}
