@@ -58,11 +58,13 @@ function handleAddToCartBtn(productID) {
 
     document.getElementById('your-order-section').innerHTML = addToCartFeed
 
-    
+    handleAddToCart(addToCartFeed)
 }
 
 // Function to handle addtocart section
 const handleAddToCart = cartDataObj => {
+    let cartDataObjList = []
+    cartDataObjList.push(cartDataObj)
  
 }
 
