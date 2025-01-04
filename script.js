@@ -27,9 +27,6 @@ console.log(menuArray)
     
        return feedHtml
    }
-   render()
-
-   
 
 
 //    add to cart option click Event
@@ -37,23 +34,36 @@ document.addEventListener('click', function(e){
     if (e.target.dataset.productName){
         handleAddToCartBtn(e.target.dataset.productName)
     }
-        
-
-    function handleAddToCartBtn(productID) {
-        const addToCartData = menuArray.filter((product) =>{
-         return product.id == productID
-        })[0]
-        console.log(addToCartData)
-
-
-    }
-   
 })
 
+function handleAddToCartBtn(productID) {
+    const addToCartData = menuArray.filter((product) => {
+        return product.id == productID
+    
+    })[0]
+    console.log(addToCartData)
+
+    let addToCartFeed = ` `
+    addToCartFeed += `<div class="order-items-list">
+            <p>Your Order</p>
+            <ul class="order-item-list-content">
+                <li>
+                    <ul class="left-side-list">
+                        <li class=".menu-item-name">${addToCartData.name}</li>
+                        <li class="item-remove-btn">remove</li>
+                    </ul>
+                </li>
+                <li class=".menu-item-price">$${addToCartData.price}</li>
+            </ul>
+        </div>`
+
+    document.getElementById('your-order-section').innerHTML = addToCartFeed
+    
+}
+render()
    function render(){
        document.getElementById('feed').innerHTML = getFeedHtml()
    }
-// Ensure the DOM is fully loaded before calling render
 
 
 
