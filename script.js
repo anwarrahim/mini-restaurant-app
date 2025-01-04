@@ -3,6 +3,8 @@ import menuArray from './data.js'
 
 console.log(menuArray)
 
+let cartDataObjList =[]
+
    function getFeedHtml(){
     let feedHtml= ` `
     menuArray.forEach(menuItem =>{
@@ -27,6 +29,14 @@ console.log(menuArray)
     
        return feedHtml
    }
+// Function to handle addtocart section
+// const handleAddToCart = cartDataObj => {
+//     let cartDataObjList = []
+//     cartDataObjList.push(cartDataObj)
+
+//     document.getElementById('your-order-section').innerHTML = cartDataObjList
+// }
+
 
 
 //    add to cart option click Event
@@ -36,46 +46,40 @@ document.addEventListener('click', function(e){
     }
 })
 
+
 function handleAddToCartBtn(productID) {
     const addToCartData = menuArray.filter((product) => {
         return product.id == productID
-    
     })[0]
+    cartDataObjList.unshift(addToCartData)
 
+    renderCart()
+}
+
+
+const renderCart = () =>{
     let addToCartFeed = ` `
+    cartDataObjList.forEach(cartDataObj =>{
     addToCartFeed += `<div class="order-items-list">
             <p>Your Order</p>
             <ul class="order-item-list-content">
                 <li>
                     <ul class="left-side-list">
-                        <li class=".menu-item-name">${addToCartData.name}</li>
+                        <li class=".menu-item-name">${cartDataObj.name}</li>
                         <li class="item-remove-btn">remove</li>
                     </ul>
                 </li>
-                <li class=".menu-item-price">$${addToCartData.price}</li>
+                <li class=".menu-item-price">$${cartDataObj.price}</li>
             </ul>
         </div>`
-
+    })
     document.getElementById('your-order-section').innerHTML = addToCartFeed
-
-    handleAddToCart(addToCartFeed)
 }
-
-// Function to handle addtocart section
-const handleAddToCart = cartDataObj => {
-    let cartDataObjList = []
-    cartDataObjList.push(cartDataObj)
- 
-}
-
-
-render()
    function render(){
        document.getElementById('feed').innerHTML = getFeedHtml()
    }
 
-
-
+render()
    
         
 
