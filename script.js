@@ -41,8 +41,6 @@ function handleAddToCartBtn(productID) {
         return product.id == productID
     
     })[0]
-    
-    console.log(addToCartData)
 
     let addToCartFeed = ` `
     addToCartFeed += `<div class="order-items-list">
@@ -59,8 +57,16 @@ function handleAddToCartBtn(productID) {
         </div>`
 
     document.getElementById('your-order-section').innerHTML = addToCartFeed
+
     
 }
+
+// Function to handle addtocart section
+const handleAddToCart = cartDataObj => {
+ 
+}
+
+
 render()
    function render(){
        document.getElementById('feed').innerHTML = getFeedHtml()
