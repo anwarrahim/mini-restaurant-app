@@ -41,6 +41,7 @@ function handleAddToCartBtn(productID) {
         return product.id == productID
     
     })[0]
+    
     console.log(addToCartData)
 
     let addToCartFeed = ` `
