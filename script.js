@@ -60,8 +60,8 @@ function handleAddToCartBtn(productID) {
 const renderCart = () =>{
     let addToCartFeed = ` `
     cartDataObjList.forEach(cartDataObj =>{
+            
     addToCartFeed += `<div class="order-items-list">
-            <p>Your Order</p>
             <ul class="order-item-list-content">
                 <li>
                     <ul class="left-side-list">
