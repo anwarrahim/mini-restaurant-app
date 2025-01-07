@@ -29,21 +29,20 @@ let cartDataObjList =[]
     
        return feedHtml
    }
-// Function to handle addtocart section
-// const handleAddToCart = cartDataObj => {
-//     let cartDataObjList = []
-//     cartDataObjList.push(cartDataObj)
-
-//     document.getElementById('your-order-section').innerHTML = cartDataObjList
-// }
 
 
-
-//    add to cart option click Event
+   //    add to cart option click Event
 document.addEventListener('click', function(e){
     if (e.target.dataset.productName){
         handleAddToCartBtn(e.target.dataset.productName)
     }
+    if (e.target.dataset.removeProduct){
+
+
+
+        handleRemoveToCartBtn(e.target.dataset.removeProduct)
+    }
+       
 })
 
 
@@ -59,26 +58,45 @@ function handleAddToCartBtn(productID) {
 
 const renderCart = () =>{
     let addToCartFeed = ` `
-    cartDataObjList.forEach(cartDataObj =>{
+   cartDataObjList.map(cartDataObj =>{
             
     addToCartFeed += `<div class="order-items-list">
             <ul class="order-item-list-content">
                 <li>
                     <ul class="left-side-list">
                         <li class=".menu-item-name">${cartDataObj.name}</li>
-                        <li class="item-remove-btn">remove</li>
+                        <li class="item-remove-btn" data-remove-product = ${cartDataObj.id}>remove</li>
                     </ul>
                 </li>
                 <li class=".menu-item-price">$${cartDataObj.price}</li>
             </ul>
-        </div>`
-    })
+           </div>`
+    }).reduce()
+
+
     document.getElementById('your-order-section').innerHTML = addToCartFeed
+  }
+
+
+
+
+// function of remove button
+const handleRemoveToCartBtn = removeItem =>{
+     cartDataObjList = cartDataObjList.filter(product =>{
+        return product.id != removeItem
+
+    })
+    
+    renderCart()
+   
 }
+
+
+
    function render(){
        document.getElementById('feed').innerHTML = getFeedHtml()
    }
-
+   
 render()
    
         
