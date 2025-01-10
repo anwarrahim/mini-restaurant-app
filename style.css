@@ -111,8 +111,16 @@ ul{
     align-items: center;
     gap: 5px;
 }
-
 .order-item-list-content .item-remove-btn{
 padding-left: 10px;
 cursor: pointer;
+}
+.product-items-total-price{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px;
+}
+.product-items-total-price button{
+    padding: 10px 10px;
+    margin: 20px;
 }

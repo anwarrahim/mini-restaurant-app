@@ -1,7 +1,6 @@
 import menuArray from './data.js'
 
 
-console.log(menuArray)
 
 let cartDataObjList =[]
 
@@ -38,13 +37,10 @@ document.addEventListener('click', function(e){
     }
     if (e.target.dataset.removeProduct){
 
-
-
         handleRemoveToCartBtn(e.target.dataset.removeProduct)
     }
        
 })
-
 
 function handleAddToCartBtn(productID) {
     const addToCartData = menuArray.filter((product) => {
@@ -58,27 +54,27 @@ function handleAddToCartBtn(productID) {
 
 const renderCart = () =>{
     let addToCartFeed = ` `
-   cartDataObjList.map(cartDataObj =>{
+   cartDataObjList.forEach(cartDataObj =>{
             
     addToCartFeed += `<div class="order-items-list">
             <ul class="order-item-list-content">
                 <li>
                     <ul class="left-side-list">
-                        <li class=".menu-item-name">${cartDataObj.name}</li>
+                        <li class="menu-item-name">${cartDataObj.name}</li>
                         <li class="item-remove-btn" data-remove-product = ${cartDataObj.id}>remove</li>
                     </ul>
                 </li>
-                <li class=".menu-item-price">$${cartDataObj.price}</li>
+                <li class="menu-item-price">$${cartDataObj.price}</li>
             </ul>
            </div>`
-    }).reduce()
+    })
 
-
+    // Calculate total price
+    const totalPriceHtml = handleAddToCartTotal(cartDataObjList)
+    addToCartFeed += totalPriceHtml
+    
     document.getElementById('your-order-section').innerHTML = addToCartFeed
   }
-
-
-
 
 // function of remove button
 const handleRemoveToCartBtn = removeItem =>{
@@ -86,11 +82,23 @@ const handleRemoveToCartBtn = removeItem =>{
         return product.id != removeItem
 
     })
-    
     renderCart()
-   
 }
 
+const handleAddToCartTotal = cartDataObjList => {
+    const totalPriceReduce = cartDataObjList.reduce((total, currentItem) =>{
+       return total + currentItem.price
+    }, 0)
+    return `<hr style="border: none; border-top: 2px solid #000000b3; margin: 20px 30px;" />
+                <div>
+                    <div class="product-items-total-price">
+                        <p>Total price:</p>
+                        <button>Buy Items</button>
+                        <p>$${totalPriceReduce}</p>
+                    </div>
+                </div>` 
+
+}
 
 
    function render(){
@@ -98,6 +106,3 @@ const handleRemoveToCartBtn = removeItem =>{
    }
    
 render()
-   
-        
-
