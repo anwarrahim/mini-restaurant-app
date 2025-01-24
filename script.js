@@ -47,6 +47,7 @@ document.addEventListener('click', function(e){
     if (e.target && e.target.id === 'btn-pay'){
         document.getElementById('class-card-details').style.display = 'none'
         document.getElementById('your-order-section').style.display = 'none'
+        
         document.getElementById('thanks-for-buying').style.display = 'block'
         
     }
