@@ -43,6 +43,9 @@ document.addEventListener('click', function(e){
      if (e.target && e.target.id === 'buy-btn'){
         document.getElementById('class-card-details').style.display = 'block'
     }
+    else if (e.target && e.target.id === 'btn-pay'){
+        document.getElementById('class-card-details').style.display = 'none'
+    }
        
 })
 
