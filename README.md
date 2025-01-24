@@ -14,7 +14,7 @@ The mini-restaurant-app is a web application designed to help users browse and o
 ## Installation
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/mini-restaurant-app.git
+    git clone https://github.com/anwarrahim/mini-restaurant-app.git
     ```
 2. Navigate to the project directory:
     ```bash
