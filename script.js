@@ -1,5 +1,7 @@
 import menuArray from './data.js'
 
+
+
 let cartDataObjList =[]
 
    function getFeedHtml(){
@@ -37,8 +39,13 @@ document.addEventListener('click', function(e){
 
         handleRemoveToCartBtn(e.target.dataset.removeProduct)
     }
+
+     if (e.target && e.target.id === 'buy-btn'){
+        document.getElementById('class-card-details').style.display = 'block'
+    }
        
 })
+
 
 function handleAddToCartBtn(productID) {
     const addToCartData = menuArray.filter((product) => {
@@ -91,12 +98,21 @@ const handleAddToCartTotal = cartDataObjList => {
                 <div>
                     <div class="product-items-total-price">
                         <p>Total price:</p>
-                        <button>Buy Items</button>
                         <p>$${totalPriceReduce}</p>
                     </div>
+                    <button class="btn buy-btn" id="buy-btn">Buy Items</button>
                 </div>` 
 
+
 }
+// Card details logics
+
+
+
+// document.getElementById('buy-btn').addEventListener('click', function(){
+//     document.getElementById('class-card-details').style.display ='block'
+// })
+
 
 
    function render(){

@@ -36,6 +36,8 @@ body {
 }
 .menu-items-list{
     padding: 0 0 50px;
+    position: relative;
+    z-index: 0;
 }
 .menu-items{
     display: flex;
@@ -127,7 +129,68 @@ cursor: pointer;
     justify-content: space-between;
     margin: 0 20px;
 }
-.product-items-total-price button{
+/* .product-items-total-price button{
     padding: 10px 10px;
     margin: 20px;
+    display: block;
+} */
+.buy-btn{
+    width: 550px;
+    margin:20px;
+
+}
+
+/* Card details css */
+
+.details-card h2 {
+    text-align: center;
+}
+
+.container-card {
+    width: 524px;
+    height: 542px;
+    background: white;
+    box-shadow: 3px 3px 30px black;
+    margin: auto;
+    border-radius: 3.8px;
+
+}
+
+.details-card {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: center;
+    gap: 4px;
+}
+
+.details-card input {
+    /* outline: none; */
+    padding: 10px;
+    border-radius: 3px;
+    /* border-color: rgb(255, 255, 255); */
+}
+
+.details-card input:focus {
+    color: chocolate;
+    outline: none;
+    border-color: burlywood;
+    background-color: white;
+}
+
+.btn {
+    background-color: #16DB99;
+    padding: 10px;
+    border-radius: 3px;
+    margin-top: 24px;
+}
+
+.class-card-details{
+    display: none;
+    position: absolute;
+    bottom: -70px;
+    right: 510px;
+    height: 600px;
+    align-items: center;
+    z-index: 2;
 }
