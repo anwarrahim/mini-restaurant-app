@@ -23,9 +23,16 @@ body {
 
 .header-txt{
     color: white;
+
     font-weight: 400;
     font-size: 23px;
     line-height: 13.8px;
+}
+
+.header-txt p{
+    align-items: center;
+    height: 50px;
+    
 }
 .menu-items-list{
     padding: 0 0 50px;

@@ -1,7 +1,5 @@
 import menuArray from './data.js'
 
-
-
 let cartDataObjList =[]
 
    function getFeedHtml(){
