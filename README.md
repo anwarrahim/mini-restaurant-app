@@ -1,5 +1,3 @@
-![mini-restaurant-app](https://via.placeholder.com/150)
-
 # mini-restaurant-app
 
 ## Description
